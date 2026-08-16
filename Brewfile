@@ -1,18 +1,14 @@
-tap "anomalyco/tap"
-tap "cloudflare/cloudflare"
-tap "dart-lang/dart"
-tap "facebook/fb"
+tap "anomalyco/tap", trusted: true
+tap "cloudflare/cloudflare", trusted: true
+tap "dart-lang/dart", trusted: true
+tap "facebook/fb", trusted: true
 tap "hashicorp/tap", trusted: true
-tap "homebrew/services"
-tap "leoafarias/fvm"
-tap "majd/repo"
-tap "muquit/mailsend-go"
-tap "ngrok/ngrok"
+tap "homebrew/services", trusted: true
+tap "ngrok/ngrok", trusted: true
 tap "oven-sh/bun", trusted: true
-tap "shivammathur/php"
-tap "siderolabs/tap"
-tap "supabase/tap"
-tap "twilio/brew"
+tap "twilio/brew", trusted: true
+tap "supabase/tap", trusted:true
+tap "hashicorp/tap", trusted: true
 tap "wix-incubator/brew", "https://github.com/wix-incubator/homebrew-brew.git"
 tap "xcodesorg/made", trusted: { formulae: ["xcodes"] }
 # Run your GitHub Actions locally
@@ -247,8 +243,6 @@ brew "openslide"
 brew "openssl@3.5"
 # Open Visual Inference And Optimization toolkit for AI inference
 brew "openvino"
-# Modify dynamic ELF executables
-brew "patchelf"
 # Your Gateway to Embedded Software Development Excellence
 brew "platformio"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -346,7 +340,6 @@ cask "ghidra"
 cask "ghostty"
 # Web browser
 cask "google-chrome"
-cask "ipatool"
 # Electronics design automation suite
 cask "kicad"
 # Open-source cross-platform alternative to AirDrop
