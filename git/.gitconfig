@@ -1,7 +1,7 @@
 [user]
-        email = 24797481+matinzd@users.noreply.github.com
-        name = matinzd
-        signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN3YbyvOG1m4+xAVNNm4FzhOvuIEYfGR20A+kLxxLkK7
+	email = 24797481+matinzd@users.noreply.github.com
+	name = matinzd
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN3YbyvOG1m4+xAVNNm4FzhOvuIEYfGR20A+kLxxLkK7
 
 [gpg]
 	format = ssh
