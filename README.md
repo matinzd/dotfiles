@@ -12,6 +12,7 @@ Each top-level directory (`zsh/`, `tmux/`, `git/`, `ssh/`) mirrors `$HOME` and g
 | `tmux/`            | `.tmux.conf`                                          |
 | `git/`             | Git config                                            |
 | `ssh/`             | SSH config (no keys!)                                 |
+| `nvim/`            | Neovim config (`~/.config/nvim`)                      |
 | `macos/defaults.sh` | macOS system preferences (`defaults write …`)        |
 | `macos/non-brew.sh` | Tools not managed by Homebrew (idempotent)           |
 
@@ -33,7 +34,7 @@ cd ~/dotfiles
 brew bundle install
 
 # 5. Symlink dotfiles into $HOME
-stow -t ~ zsh tmux git ssh
+stow -t ~ zsh tmux git ssh nvim
 
 # 6. Non-brew tools (oh-my-zsh, nvm, sdkman, rustup, flutter, maestro, uv, …)
 ./macos/non-brew.sh
