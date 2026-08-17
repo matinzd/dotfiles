@@ -12,6 +12,7 @@ do
   vim.g.have_nerd_font = true
 
   vim.o.number = true
+  vim.o.relativenumber = true
   vim.o.mouse = 'a'
   vim.o.showmode = false
 
@@ -136,17 +137,6 @@ local function gh(repo) return 'https://github.com/' .. repo end
 do
   vim.pack.add { gh 'NMAC427/guess-indent.nvim' }
   require('guess-indent').setup {}
-
-  vim.pack.add { gh 'lewis6991/gitsigns.nvim' }
-  require('gitsigns').setup {
-    signs = {
-      add = { text = '+' }, ---@diagnostic disable-line: missing-fields
-      change = { text = '~' }, ---@diagnostic disable-line: missing-fields
-      delete = { text = '_' }, ---@diagnostic disable-line: missing-fields
-      topdelete = { text = '‾' }, ---@diagnostic disable-line: missing-fields
-      changedelete = { text = '~' }, ---@diagnostic disable-line: missing-fields
-    },
-  }
 
   vim.pack.add { gh 'folke/which-key.nvim' }
   require('which-key').setup {
@@ -611,7 +601,7 @@ end
 do
   require 'plugins.lint'
   require 'plugins.neo-tree'
-  require 'plugins.gitsigns' -- adds gitsigns recommended keymaps
+  require 'plugins.git' -- gitsigns + fugitive, with keymaps
 end
 
 -- vim: ts=2 sts=2 sw=2 et

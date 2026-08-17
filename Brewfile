@@ -211,6 +211,8 @@ brew "llvm@15"
 brew "mactop"
 # Utility for directing compilation
 brew "make"
+# CLI for Node.js style checker and lint tool for Markdown files
+brew "markdownlint-cli"
 # Replacement for the old crypt package and crypt(1) command
 brew "mcrypt"
 # Interpreted, interactive, object-oriented programming language
