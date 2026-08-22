@@ -66,6 +66,8 @@ export PATH="$HOME/.bun/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 claudeo() {
+  export CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK=1
+  export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1
   export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
   export ANTHROPIC_AUTH_TOKEN="$(op read "op://Private/openrouter/password")"
   export ANTHROPIC_API_KEY=""
