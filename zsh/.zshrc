@@ -66,14 +66,18 @@ export PATH="$HOME/.bun/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 claudeo() {
-  export CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK=1
-  export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1
-  export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
-  export ANTHROPIC_AUTH_TOKEN="$(op read "op://Private/openrouter/password")"
-  export ANTHROPIC_API_KEY=""
-  export ANTHROPIC_MODEL="openrouter/free"
+  local token
+  token="$(op read 'op://Private/openrouter/password')" || return 1
 
-  claude "$@"
+  env \
+    CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK=1 \
+    CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1 \
+    ANTHROPIC_BASE_URL='https://openrouter.ai/api' \
+    ANTHROPIC_AUTH_TOKEN="$token" \
+    ANTHROPIC_API_KEY='' \
+    CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT=1 \
+    ANTHROPIC_MODEL='deepseek/deepseek-v4-flash-0731' \
+    claude "$@"
 }
 
 # Opencode
