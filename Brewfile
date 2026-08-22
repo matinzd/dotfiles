@@ -11,6 +11,10 @@ tap "supabase/tap", trusted:true
 tap "hashicorp/tap", trusted: true
 tap "wix-incubator/brew", "https://github.com/wix-incubator/homebrew-brew.git"
 tap "xcodesorg/made", trusted: { formulae: ["xcodes"] }
+# Mole disk analyzer/cleanup
+brew "mole"
+# Linux networking base tools
+brew "net-tools"
 # Run your GitHub Actions locally
 brew "act"
 # Simple, modern, secure file encryption
@@ -333,7 +337,9 @@ cask "claude"
 cask "codeql"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
+# Fonts
 cask "font-ubuntu-sans-nerd-font"
+cask "font-hack-nerd-font"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
 # Software reverse engineering (SRE) suite of tools
