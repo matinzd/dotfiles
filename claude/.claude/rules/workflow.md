@@ -1,0 +1,1 @@
+- Don't delete or stub out failing tests to make a build green.

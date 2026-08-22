@@ -1,0 +1,4 @@
+- Commit messages: imperative mood, ≤72-char subject, body explains _why_ not _what_.
+- Use conventional commit format: `<type>(<scope>): <subject>`. Example: `fix(api): correct user ID parsing`.
+- Never commit secrets, `.env`, keystores, or generated build output.
+- Never use `--no-verify`, force-push, or rewrite published history.

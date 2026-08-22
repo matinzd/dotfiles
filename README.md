@@ -5,16 +5,17 @@ Each top-level directory (`zsh/`, `tmux/`, `git/`, `ssh/`) mirrors `$HOME` and g
 
 ## Structure
 
-| Path               | Contents                                              |
-| ------------------ | ----------------------------------------------------- |
-| `Brewfile`         | All Homebrew formulae, casks, VS Code extensions, etc. |
-| `zsh/`             | `.zshrc` (Oh My Zsh config, PATH, aliases)            |
-| `tmux/`            | `.tmux.conf`                                          |
-| `git/`             | Git config                                            |
-| `ssh/`             | SSH config (no keys!)                                 |
-| `nvim/`            | Neovim config (`~/.config/nvim`)                      |
-| `macos/defaults.sh` | macOS system preferences (`defaults write …`)        |
-| `macos/non-brew.sh` | Tools not managed by Homebrew (idempotent)           |
+| Path                | Contents                                               |
+| ------------------- | ------------------------------------------------------ |
+| `Brewfile`          | All Homebrew formulae, casks, VS Code extensions, etc. |
+| `zsh/`              | `.zshrc` (Oh My Zsh config, PATH, aliases)             |
+| `tmux/`             | `.tmux.conf`                                           |
+| `git/`              | Git config                                             |
+| `ssh/`              | SSH config (no keys!)                                  |
+| `nvim/`             | Neovim config (`~/.config/nvim`)                       |
+| `claude/`           | Claude agent config (`~/.claude`)                      |
+| `macos/defaults.sh` | macOS system preferences (`defaults write …`)          |
+| `macos/non-brew.sh` | Tools not managed by Homebrew (idempotent)             |
 
 ## Restore on a new machine
 
@@ -34,7 +35,7 @@ cd ~/dotfiles
 brew bundle install
 
 # 5. Symlink dotfiles into $HOME
-stow -t ~ zsh tmux git ssh nvim
+stow -t ~ zsh tmux git ssh nvim claude
 
 # 6. Non-brew tools (oh-my-zsh, nvm, sdkman, rustup, flutter, maestro, uv, …)
 ./macos/non-brew.sh
@@ -45,7 +46,7 @@ stow -t ~ zsh tmux git ssh nvim
 
 ### Notes
 
-- **Order matters** — run `stow` *before* `non-brew.sh`: the Oh My Zsh installer runs with `--keep-zshrc` so it won't overwrite the stowed `.zshrc`.
+- **Order matters** — run `stow` _before_ `non-brew.sh`: the Oh My Zsh installer runs with `--keep-zshrc` so it won't overwrite the stowed `.zshrc`.
 - **Stow conflicts** — if a default file (e.g. `~/.zshrc`) already exists, stow refuses to link. Force this repo's version to win with:
   ```bash
   stow --adopt -t ~ zsh && git checkout .
